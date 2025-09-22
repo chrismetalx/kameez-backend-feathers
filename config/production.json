@@ -1,0 +1,6 @@
+{
+  "host": "kameez-backend-feathers.onrender.com",
+  "port": 10000,
+  "public": "../public",
+  "mongodb": "mongodb+srv://<production_user>:<production_password>@<production_cluster>.mongodb.net/<production_database>?retryWrites=true&w=majority"
+}
