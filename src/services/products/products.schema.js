@@ -4,7 +4,7 @@ import { Type, getValidator, querySyntax } from '@feathersjs/typebox'
 import { ObjectIdSchema } from '@feathersjs/typebox'
 import { dataValidator, queryValidator } from '../../validators.js'
 
-// Main data model schema
+// Main data model schema a
 export const productsSchema = Type.Object(
   {
     _id: ObjectIdSchema(),
