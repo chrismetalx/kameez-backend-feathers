@@ -1,0 +1,73 @@
+{
+  "name": "kameez-backend-feathers",
+  "description": "kameez-feathers",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "keywords": [
+    "feathers"
+  ],
+  "author": {},
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": ">= 22.15.1"
+  },
+  "feathers": {
+    "language": "js",
+    "packager": "npm",
+    "database": "mongodb",
+    "framework": "koa",
+    "transports": [
+      "rest",
+      "websockets"
+    ],
+    "schema": "typebox"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "files": [
+    "lib/client.js",
+    "lib/**/*.d.ts",
+    "lib/**/*.shared.js"
+  ],
+  "main": "src/client",
+  "type": "module",
+  "scripts": {
+    "start": "node src",
+    "dev": "nodemon src/",
+    "prettier": "npx prettier \"**/*.js\" --write",
+    "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit",
+    "test": "npm run mocha",
+    "bundle:client": "npm pack --pack-destination ./public"
+  },
+  "dependencies": {
+    "@feathersjs/adapter-commons": "^5.0.35",
+    "@feathersjs/authentication": "^5.0.35",
+    "@feathersjs/authentication-client": "^5.0.35",
+    "@feathersjs/authentication-local": "^5.0.35",
+    "@feathersjs/authentication-oauth": "^5.0.35",
+    "@feathersjs/configuration": "^5.0.35",
+    "@feathersjs/errors": "^5.0.35",
+    "@feathersjs/feathers": "^5.0.35",
+    "@feathersjs/koa": "^5.0.35",
+    "@feathersjs/mongodb": "^5.0.35",
+    "@feathersjs/schema": "^5.0.35",
+    "@feathersjs/socketio": "^5.0.35",
+    "@feathersjs/transport-commons": "^5.0.35",
+    "@feathersjs/typebox": "^5.0.35",
+    "mongodb": "^6.19.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@feathersjs/cli": "^5.0.35",
+    "@feathersjs/rest-client": "^5.0.35",
+    "axios": "^1.11.0",
+    "cross-env": "^10.0.0",
+    "mocha": "^11.7.2",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
+  }
+}
