@@ -37,7 +37,7 @@
   "type": "module",
   "scripts": {
     "start": "node src",
-    "dev": "nodemon src/",
+    "dev": "cross-env MONGODB_URI=\"mongodb://127.0.0.1:27017/kameez-backend-feathers\" nodemon src/",
     "prettier": "npx prettier \"**/*.js\" --write",
     "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit",
     "test": "npm run mocha",
