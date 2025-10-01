@@ -5,6 +5,8 @@ export {}
 
 export {}
 
+export {}
+
 /**
  * Returns a  client for the kameez-backend-feathers app.
  *
@@ -23,6 +25,8 @@ export const createClient = (connection, authenticationOptions = {}) => {
   client.configure(productsClient)
 
   client.configure(usersClient)
+
+  client.configure(categoriesClient)
 
   return client
 }

@@ -14,6 +14,7 @@ import {
 } from './users.schema.js'
 import { UsersService, getOptions } from './users.class.js'
 import { usersPath, usersMethods } from './users.shared.js'
+import { fullName } from './users.hooks.js'
 
 export * from './users.class.js'
 export * from './users.schema.js'
@@ -31,11 +32,11 @@ export const users = app => {
   app.service(usersPath).hooks({
     around: {
       all: [schemaHooks.resolveExternal(usersExternalResolver), schemaHooks.resolveResult(usersResolver)],
-      find: [authenticate('jwt')],
-      get: [authenticate('jwt')],
+      find: [],
+      get: [],
       create: [],
       update: [authenticate('jwt')],
-      patch: [authenticate('jwt')],
+      patch: [],
       remove: [authenticate('jwt')]
     },
     before: {
@@ -47,7 +48,7 @@ export const users = app => {
       remove: []
     },
     after: {
-      all: []
+      all: [fullName()]
     },
     error: {
       all: []

@@ -14,6 +14,7 @@ import {
 } from './products.schema.js'
 import { ProductsService, getOptions } from './products.class.js'
 import { productsPath, productsMethods } from './products.shared.js'
+import { joinCategories } from './products.hooks.js'
 
 export * from './products.class.js'
 export * from './products.schema.js'
@@ -41,7 +42,7 @@ export const products = app => {
         schemaHooks.validateQuery(productsQueryValidator),
         schemaHooks.resolveQuery(productsQueryResolver)
       ],
-      find: [],
+      find: [joinCategories()],
       get: [],
       create: [
         schemaHooks.validateData(productsDataValidator),
