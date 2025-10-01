@@ -3,14 +3,13 @@ import { resolve } from '@feathersjs/schema'
 import { Type, getValidator, querySyntax } from '@feathersjs/typebox'
 import { ObjectIdSchema } from '@feathersjs/typebox'
 import { dataValidator, queryValidator } from '../../validators.js'
-import { format } from 'mysql2'
 
 // Main data model schema a
 export const productsSchema = Type.Object(
   {
     _id: ObjectIdSchema(),
     name: Type.String(),
-    price: Type.Number(format.float),
+    price: Type.Number(),
     size: Type.String(),
     image: Type.String(),
     stock: Type.Boolean(),
