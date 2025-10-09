@@ -16,7 +16,7 @@ export const productsSchema = Type.Object(
     description: Type.String(),
     category_id: ObjectIdSchema()
   },
-  { $id: 'Products', additionalProperties: false }
+  { $id: 'Products', additionalProperties: true }
 )
 export const productsValidator = getValidator(productsSchema, dataValidator)
 export const productsResolver = resolve({})
